@@ -1,0 +1,5 @@
+Also do this in Cmd as it does not work with the powershell
+In Django Folder
+    DjangoEnv\Scripts\activate.bat
+    
+    cd portfolio-project

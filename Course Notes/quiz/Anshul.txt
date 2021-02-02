@@ -1,0 +1,41 @@
+Question 1:
+
+form django import forms
+
+form .models import Company
+form .models import Car
+
+class CompanyForm(forms.ModelForm):
+    class Meta:
+    model = Company
+    fields = ['co_name']
+    labels = {
+    }
+class CarForm(forms.ModelForm):
+    class Meta:
+    model = Car
+    fields = ['type','company']
+    labels = {
+          "type" : "Car type",
+          "company" : "Manufacturer"
+    }
+
+
+
+Question 2:
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form action="{% url 'myapp:company_form' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="submit1" value="OK"/>
+    </form>
+    <form action="{% url 'myapp:car_form' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="submit1" value="OK"/>
+    </form>
+</body>
+</html>
